@@ -20,8 +20,11 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 grunt.initConfig({
     concurrentdep: {
         app: {
-            cssmin: ['csslint'],
-            uglify: ['jshint'],
+            concat: ['csslint','jshint'],
+            cssmin: ['concat'],
+            csslint: ['preprocess'],
+            jshint: ['preprocess'],
+            uglify: ['concat'],
             phplint: []
         }
     }
@@ -30,7 +33,11 @@ grunt.initConfig({
 grunt.registerTask( "default",['concurrentdep']);
 ```
 
-
+```
+run: preprocess-->csslint->concat-->uglify-v
+               v->jshint--^      v->cssmin->done
+     phplint-------------------------------^
+```
 ## Options
 
 ### cpu
