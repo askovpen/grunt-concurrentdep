@@ -1,4 +1,4 @@
-# grunt-concurrent [![Build Status](https://travis-ci.org/askovpen/grunt-concurrentdep.svg?branch=master)](https://travis-ci.org/askovpen/grunt-concurrentdep)
+# grunt-concurrentdep [![Build Status](https://travis-ci.org/askovpen/grunt-concurrentdep.svg?branch=master)](https://travis-ci.org/askovpen/grunt-concurrentdep)
 
 > Run grunt tasks concurrently by depends
 

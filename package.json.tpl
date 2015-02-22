@@ -1,6 +1,6 @@
 {
   "name": "grunt-concurrentdep",
-  "version": "0.0.1",
+  "version": "0.0.<!-- @echo REVISION -->",
   "description": "Run grunt tasks concurrently by depend",
   "keywords": [
     "gruntplugin",
@@ -18,24 +18,11 @@
     "type": "git",
     "url": "https://github.com/askovpen/grunt-concurrentdep"
   },
-  "scripts": {
-    "test": "grunt"
-  },
   "files": [
     "tasks"
   ],
   "dependencies": {
     "async": "^0.9.0"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-nodemon": "^0.3.0",
-    "grunt-preprocess": "^4.1.0",
-    "grunt-simple-mocha": "^0.4.0",
-    "nodemon": "^1.2.1"
   },
   "engines": {
     "node": ">=0.10.0"
