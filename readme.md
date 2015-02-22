@@ -37,10 +37,10 @@ grunt.registerTask( "default",['concurrentdep']);
 
 
 ```
-                     ┌csslint┐      ┌uglify┐
-run:      ┌preprocess┤       ├concat┤      ├┐
-     start┤          └jshint─┘      └cssmin┘├done
-          └phplint──────────────────────────┘
+                        ┌ csslint ┐        ┌ uglify ┐
+run:       ┌ preprocess ┤         ├ concat ┤        ├┐
+     start ┤            └ jshint ─┘        └ cssmin ┘├ done
+           └ phplint ────────────────────────────────┘
 ```
 ## Options
 
