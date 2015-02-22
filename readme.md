@@ -1,5 +1,7 @@
 # grunt-concurrentdep [![Build Status](https://travis-ci.org/askovpen/grunt-concurrentdep.svg?branch=master)](https://travis-ci.org/askovpen/grunt-concurrentdep)
 
+[![NPM](https://nodei.co/npm/grunt-concurrentdep.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/grunt-concurrentdep/)
+
 > Run grunt tasks concurrently by depends
 
 Running slow tasks like Coffee and Sass concurrently can potentially improve your build time significantly. This task is also useful if you need to run [multiple blocking tasks](#logconcurrentoutput) like `nodemon` and `watch` at once.
