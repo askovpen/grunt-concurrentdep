@@ -36,7 +36,7 @@ grunt.registerTask( "default",['concurrentdep']);
 ### cpu
 
 Type: `number`  
-Default: Twice the number of CPU cores with a minimum of 2
+Default: 4
 
 Limit how many tasks that are run concurrently.
 
