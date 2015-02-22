@@ -15,6 +15,12 @@ module.exports = function (grunt) {
                 }
             }
         },
+        jshint: {
+            options: {
+                jshintrc: true
+            },
+            all: ['Gruntfile.js', 'package.json', 'dist/package.json', 'dist/tasks/concurrentdep.js']
+        },
         concurrentdep: {
             test: ['test1', 'test2', 'test3'],
             testargs: ['testargs1', 'testargs2'],
@@ -69,6 +75,7 @@ module.exports = function (grunt) {
 
     grunt.loadTasks('tasks');
     grunt.loadNpmTasks('grunt-preprocess');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-simple-mocha');
@@ -112,5 +119,6 @@ module.exports = function (grunt) {
     grunt.registerTask('dist', [
         'revision',
         'preprocess',
+        'jshint'
     ]);
 };
