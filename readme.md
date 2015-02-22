@@ -35,10 +35,12 @@ grunt.initConfig({
 grunt.registerTask( "default",['concurrentdep']);
 ```
 
+
 ```
-run: preprocess-->csslint->concat-->uglify-v
-               v->jshint--^      v->cssmin->done
-     phplint-------------------------------^
+                     ┌csslint┐      ┌uglify┐
+run:      ┌preprocess┤       ├concat┤      ├┐
+     start┤          └jshint─┘      └cssmin┘├done
+          └phplint──────────────────────────┘
 ```
 ## Options
 
