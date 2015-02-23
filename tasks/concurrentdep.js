@@ -44,7 +44,7 @@ module.exports = function (grunt) {
     grunt.registerMultiTask('concurrentdep', 'Run grunt tasks concurrently', function () {
         var spawnOptions;
         var options=this.options({
-            cpu:4
+            limit:4
         });
         if (options.logConcurrentOutput) {
             spawnOptions = { stdio: 'inherit' };
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
                 callback();
             });
             cpCache.push(cp);
-        }, options.cpu);
+        }, options.limit);
         q.drain=function() {done();};
         nextTask(grunt,q);
     });

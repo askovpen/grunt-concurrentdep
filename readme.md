@@ -44,7 +44,7 @@ run:       ┌ preprocess ┤         ├ concat ┤        ├┐
 ```
 ## Options
 
-### cpu
+### limit
 
 Type: `number`  
 Default: 4

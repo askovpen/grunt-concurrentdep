@@ -1,6 +1,6 @@
 {
   "name": "grunt-concurrentdep",
-  "version": "0.0.<!-- @echo REVISION -->",
+  "version": "0.1.<!-- @echo REVISION -->",
   "description": "Run grunt tasks concurrently by depend",
   "keywords": [
     "gruntplugin",
