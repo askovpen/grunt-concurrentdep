@@ -65,7 +65,7 @@ module.exports = function (grunt) {
             });
             cpCache.push(cp);
         }, options.limit);
-        q.drain=function() {done();};
+        q.drain=function() {if (Object.keys(data).length===0) {done();} else { grunt.log.writeln('something wrong');} };
         nextTask(grunt,q);
     });
 };
