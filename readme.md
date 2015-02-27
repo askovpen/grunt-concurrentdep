@@ -17,7 +17,7 @@ $ npm install --save-dev grunt-concurrentdep
 ## Usage
 
 ```js
-require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+require('jit-grunt')(grunt); // npm install --save-dev jit-grunt
 
 grunt.initConfig({
     concurrentdep: {
