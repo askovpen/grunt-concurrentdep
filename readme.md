@@ -1,4 +1,8 @@
-# grunt-concurrentdep [![Build Status](https://travis-ci.org/askovpen/grunt-concurrentdep.svg?branch=master)](https://travis-ci.org/askovpen/grunt-concurrentdep)
+# grunt-concurrentdep 
+
+[![Build Status](https://travis-ci.org/askovpen/grunt-concurrentdep.svg?branch=master)](https://travis-ci.org/askovpen/grunt-concurrentdep)
+[![Dependency Status](https://david-dm.org/askovpen/grunt-concurrentdep.svg)](https://david-dm.org/askovpen/grunt-concurrentdep)
+[![devDependency Status](https://david-dm.org/askovpen/grunt-concurrentdep/dev-status.svg)](https://david-dm.org/askovpen/grunt-concurrentdep#info=devDependencies)
 
 [![NPM](https://nodei.co/npm/grunt-concurrentdep.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/grunt-concurrentdep/)
 
