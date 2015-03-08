@@ -61,6 +61,7 @@ module.exports = function (grunt) {
                     grunt.warn(result.stderr || result.stdout);
                 }
                 grunt.log.writeln('\n'+result.stdout);
+                cpCache.splice(cpCache.indexOf(cp),1);
                 callback();
             });
             cpCache.push(cp);
@@ -70,7 +71,7 @@ module.exports = function (grunt) {
     });
 };
 process.on('exit', function () {
-    console.log('exit');
+    grunt.log.writeln('fail exit');
     cpCache.forEach(function (el) {
         el.kill();
     });
