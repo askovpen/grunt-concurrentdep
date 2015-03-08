@@ -70,8 +70,9 @@ module.exports = function (grunt) {
         nextTask(grunt,q);
     });
 };
+
 process.on('exit', function () {
-    grunt.log.writeln('fail exit');
+    console.log('fail exit');
     cpCache.forEach(function (el) {
         el.kill();
     });
