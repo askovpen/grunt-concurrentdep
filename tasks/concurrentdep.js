@@ -1,5 +1,6 @@
 'use strict';
 var async = require('async');
+var duration = require('duration');
 var data={};
 var cpCache=[];
 
@@ -25,26 +26,40 @@ function deleteTask(ditem) {
     });
 }
 
-function nextTask(grunt,q) {
+function nextTask(grunt,q,tm) {
     Object.keys(data).forEach(function(item) {
         if (typeof(data[item])!='number') {
         if (Object.keys(data[item]).length===0) {
             data[item]=1;
             grunt.verbose.writeln('start '+item);
+            tm[item]={start:new Date()};
             q.push(item,function(err) {
                 grunt.verbose.writeln('done '+item);
+                tm[item].duration=duration(tm[item].start).milliseconds;
                 deleteTask(item);
-                nextTask(grunt,q);
+                nextTask(grunt,q,tm);
             });
         }}
     });
 }
 
+function printDuration(grunt, tm) {
+  Object.keys(tm).forEach(function(item) {
+    if (item!="total") {
+        grunt.log.writeln(("Task "+item+" duration "+tm[item].duration+"ms").blue);
+    }
+  });
+  grunt.log.writeln(("All tasks duration "+tm.total.duration+"ms").blue.bold);
+  
+}
+
 module.exports = function (grunt) {
     grunt.registerMultiTask('concurrentdep', 'Run grunt tasks concurrently', function () {
         var spawnOptions;
+        var tm={total:{start:new Date()}};
         var options=this.options({
-            limit:4
+            limit:4,
+            showDuration: true
         });
         if (options.logConcurrentOutput) {
             spawnOptions = { stdio: 'inherit' };
@@ -66,8 +81,17 @@ module.exports = function (grunt) {
             });
             cpCache.push(cp);
         }, options.limit);
-        q.drain=function() {if (Object.keys(data).length===0) {done();} else { grunt.log.writeln('something wrong');} };
-        nextTask(grunt,q);
+        q.drain=function() {
+          if (Object.keys(data).length===0) {
+            tm.total.duration=duration(tm.total.start).milliseconds;
+            if (options.showDuration) {
+              printDuration(grunt,tm);
+            }
+            done();
+          } else { 
+            grunt.log.writeln('something wrong');} 
+          };
+        nextTask(grunt,q,tm);
     });
 };
 

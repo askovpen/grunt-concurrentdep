@@ -22,7 +22,8 @@
     "tasks"
   ],
   "dependencies": {
-    "async": "^0.9.0"
+    "async": "^0.9.0",
+    "duration": "^0.2.0"
   },
   "engines": {
     "node": ">=0.10.0"
