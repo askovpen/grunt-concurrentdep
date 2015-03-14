@@ -58,7 +58,7 @@ Limit how many tasks that are run concurrently.
 ### showDuration
 
 Type: `boolean`  
-Default: `false`
+Default: `true`
 
 You can optionally show taskduration
 
