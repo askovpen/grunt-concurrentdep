@@ -65,7 +65,7 @@ You can optionally show taskduration
 ### logConcurrentOutput
 
 Type: `boolean`  
-Default: `true`
+Default: `false`
 
 You can optionally log the output of your concurrent tasks by specifying the `logConcurrentOutput` option. Here is an example config which runs [grunt-nodemon](https://github.com/ChrisWren/grunt-nodemon) to launch and monitor a node server and [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) to watch for asset changes all in one terminal tab:
 
